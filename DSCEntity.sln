@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSCEntity", "DSCEntity.csproj", "{63B58172-45B2-420F-84B4-BE35E15CF1C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63B58172-45B2-420F-84B4-BE35E15CF1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B58172-45B2-420F-84B4-BE35E15CF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B58172-45B2-420F-84B4-BE35E15CF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B58172-45B2-420F-84B4-BE35E15CF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86A3615A-CBF5-4C49-A378-E36547F07B08}
+	EndGlobalSection
+EndGlobal
