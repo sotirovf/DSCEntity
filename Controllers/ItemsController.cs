@@ -15,14 +15,14 @@ namespace DSCEntity.Controllers
         {
             
 
-            return View("Index", items);
+            return View("Index");
         }
 
         public ActionResult Details(int id)
         {
             
 
-            return View("Details", item);
+            return View("Details");
         }
 
         public ActionResult Create()
@@ -33,15 +33,14 @@ namespace DSCEntity.Controllers
         {
             
 
-            return View("ItemForm", item);
+            return View("ItemForm");
         }
         public ActionResult Delete(int id)
         {
            
 
-            List<ItemModel> items = itemDAO.FetchAll();
 
-            return View("Index", items);
+            return View("Index");
         }
 
         public ActionResult ProcessCreate(ItemModel itemModel)
@@ -60,21 +59,17 @@ namespace DSCEntity.Controllers
         {
             // get a list of search results from the DB.
 
-            ItemDAO itemDAO = new ItemDAO();
 
-            List<ItemModel> searchResults = itemDAO.SearchForName(searchPhrase);
 
-            return View("Index", searchResults);
+            return View("Index");
         }
         public ActionResult SearchForDescription(string searchPhrase)
         {
             // get a list of search results from the DB.
 
-            ItemDAO itemDAO = new ItemDAO();
 
-            List<ItemModel> searchResults = itemDAO.SearchForName(searchPhrase);
 
-            return View("Index", searchResults);
+            return View("Index");
         }
 
 
