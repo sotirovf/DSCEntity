@@ -10,6 +10,18 @@ namespace DSCEntity.Controllers
 {
     public class ItemsController : Controller
     {
+        private ApplicationDbContext context;
+
+        public ItemsController()
+        {
+            context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            context.Dispose();
+        }
+
         // GET: Items
         public ActionResult Index()
         {
