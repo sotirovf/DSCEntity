@@ -32,9 +32,9 @@ namespace DSCEntity.Controllers
 
         public ActionResult Details(int id)
         {
-            
+            ItemModel item = context.Items.SingleOrDefault(i => i.Id == id);
 
-            return View("Details");
+            return View("Details", item);
         }
 
         public ActionResult Create()
