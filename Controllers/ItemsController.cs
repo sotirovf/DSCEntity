@@ -1,6 +1,7 @@
 ﻿using DSCEntity.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,6 +40,8 @@ namespace DSCEntity.Controllers
 
         public ActionResult Create()
         {
+
+
             return View("ItemForm");
         }
         public ActionResult Edit(int id)
@@ -49,10 +52,13 @@ namespace DSCEntity.Controllers
         }
         public ActionResult Delete(int id)
         {
-           
+            ItemModel item = context.Items.SingleOrDefault(i => i.Id == id);
 
+            context.Entry(item).State = EntityState.Deleted;
 
-            return View("Index");
+            context.SaveChanges();
+
+            return Redirect("/Items");
         }
 
         public ActionResult ProcessCreate(ItemModel itemModel)
