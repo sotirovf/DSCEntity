@@ -25,9 +25,9 @@ namespace DSCEntity.Controllers
         // GET: Items
         public ActionResult Index()
         {
-            
+            List<ItemModel> items = context.Items.ToList();
 
-            return View("Index");
+            return View("Index", items);
         }
 
         public ActionResult Details(int id)
