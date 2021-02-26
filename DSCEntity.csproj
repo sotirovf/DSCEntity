@@ -175,6 +175,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102260446051_InitialState.cs" />
+    <Compile Include="Migrations\202102260446051_InitialState.designer.cs">
+      <DependentUpon>202102260446051_InitialState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102260451174_FillDatabase.cs" />
+    <Compile Include="Migrations\202102260451174_FillDatabase.designer.cs">
+      <DependentUpon>202102260451174_FillDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemModel.cs" />
@@ -258,6 +267,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202102260446051_InitialState.resx">
+      <DependentUpon>202102260446051_InitialState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102260451174_FillDatabase.resx">
+      <DependentUpon>202102260451174_FillDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
