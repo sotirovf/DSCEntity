@@ -77,9 +77,13 @@ namespace DSCEntity.Controllers
         {
             // get a list of search results from the DB.
 
+            // this is LINQ statement
+            var items = from i in context.Items
+                        where i.Name.Contains(searchPhrase)
+                        select i;
 
 
-            return View("Index");
+            return View("Index", items);
         }
         public ActionResult SearchForDescription(string searchPhrase)
         {
