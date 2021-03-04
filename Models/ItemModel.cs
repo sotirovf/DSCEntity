@@ -26,11 +26,11 @@ namespace DSCEntity.Models
         public ItemModel()
         {
             Id = -1;
-            Name = "Nothing";
-            Type = "No Type available yet";
-            Size = "No Size available yet";
-            Price = "No Price available yet";
-            Description = "No Description yet.";
+            Name = "";
+            Type = "";
+            Size = "";
+            Price = "";
+            Description = "";
 
         }
 
