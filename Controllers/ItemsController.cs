@@ -40,16 +40,15 @@ namespace DSCEntity.Controllers
 
         public ActionResult Create()
         {
-
-
-            return View("ItemForm");
+            return View("ItemForm", new ItemModel());
         }
         public ActionResult Edit(int id)
         {
-            
+            ItemModel item = context.Items.SingleOrDefault(i => i.Id == id);
 
-            return View("ItemForm");
+            return View("ItemForm", item);
         }
+
         public ActionResult Delete(int id)
         {
             ItemModel item = context.Items.SingleOrDefault(i => i.Id == id);
@@ -61,9 +60,27 @@ namespace DSCEntity.Controllers
             return Redirect("/Items");
         }
 
+        [HttpPost]
         public ActionResult ProcessCreate(ItemModel itemModel)
         {
-           
+            ItemModel item = context.Items.SingleOrDefault(i => i.Id == itemModel.Id);
+
+            // TO DO: Fix: instead of updating existing item it creates a new one currently.
+            // edit
+            if (item != null)
+            {
+                item.Name = itemModel.Name;
+                item.Type = itemModel.Type;
+                item.Size = itemModel.Size;
+                item.Price = itemModel.Price;
+                item.Description = itemModel.Description;
+            }
+            else
+            {
+                context.Items.Add(itemModel);
+            }
+
+            context.SaveChanges();
 
             return View("Details", itemModel);
         }
@@ -89,9 +106,13 @@ namespace DSCEntity.Controllers
         {
             // get a list of search results from the DB.
 
+            // this is LINQ statement
+            var items = from i in context.Items
+                        where i.Description.Contains(searchPhrase)
+                        select i;
 
+            return View("Index", items);
 
-            return View("Index");
         }
 
 
